@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Task</th>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td><a href="{% url 'task' task.id %}">view</a></td>
+        </tr>
+
+        {% empty %}
+        <p>No items in this list</p>
+    {% endfor %}
+</table>
+</body>
+</html>
