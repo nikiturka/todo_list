@@ -5,14 +5,18 @@
     <title>List</title>
 </head>
 <body>
+Your Tasks<br>
+<a href="{% url 'task_create' %}">Add a new task</a>
 <table>
     <tr>
-        <th>Task</th>
+        <th>Tasks</th>
     </tr>
     {% for task in tasks %}
         <tr>
             <td>{{ task.title }}</td>
-            <td><a href="{% url 'task' task.id %}">view</a></td>
+            <td><a href="{% url 'task' task.id %}">View</a></td>
+            <td><a href="{% url 'task_update' task.id %}">Edit</a></td>
+            <td><a href="{% url 'task_delete' task.id %}">x</a></td>
         </tr>
 
         {% empty %}
