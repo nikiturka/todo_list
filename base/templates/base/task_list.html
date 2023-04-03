@@ -5,6 +5,7 @@
     <title>List</title>
 </head>
 <body>
+
 {% if request.user.is_authenticated %}
     <p>{{ request.user }}</p>
     <a href="{% url 'logout' %}">Logout</a>
@@ -12,8 +13,14 @@
 <a href="{% url 'login' %}">Login</a>
 {% endif %}
 <hr>
-Your Tasks<br>
-<a href="{% url 'task_create' %}">Add a new task</a>
+
+Your Tasks <a href="{% url 'task_create' %}">Add a new task</a>
+
+<form action="" method="get">
+    <input type="text" name="search-area">
+    <input type="submit" value="Search...">
+</form>
+
 <table>
     <tr>
         <th>Tasks</th>
