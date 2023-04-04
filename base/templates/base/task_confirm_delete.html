@@ -1,3 +1,6 @@
+{% extends 'base/parent.html' %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +8,19 @@
     <title></title>
 </head>
 <body>
-<a href="{% url 'tasks' %}">Go back</a>
-<form action="" method="post">{% csrf_token %}
-  <p>Are you sure you want to delete this task? "{{ task }}"</p>
-  <input type="submit" value="Delete">
-</form>
+<div class="header-bar">
+    <p><a href="{% url 'tasks' %}">&#8592; Back</a></p>
+</div>
+
+<div class="delete-wrapper">
+    <form action="" method="post">{% csrf_token %}
+      <p>Are you sure you want to delete this task? "{{ task }}"</p>
+      <input type="submit" value="Delete" class="button delete">
+    </form>
+</div>
+
+
 </body>
 </html>
+
+{% endblock %}

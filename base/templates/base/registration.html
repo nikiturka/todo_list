@@ -1,3 +1,6 @@
+{% extends 'base/parent.html' %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +8,29 @@
     <title>Registration page</title>
 </head>
 <body>
-<form action="" method="post">{% csrf_token %}
-{{ form.as_p }}
-    <input type="submit" value="Register">
-</form>
 
-<p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+<div class="header-bar">
+    <h1>Registration</h1>
+</div>
+
+<div class="form-wrapper">
+
+   <form action="" method="post">{% csrf_token %}
+       {{ form.username.label }}
+       {{ form.username }}
+       <p></p>
+       {{ form.password1.label }}
+       {{ form.password1 }}
+       <p></p>
+       {{ form.password2.label }}
+       {{ form.password2 }}
+        <input type="submit" value="Register" class="button registration">
+    </form>
+
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
 </body>
 </html>
+
+{% endblock %}
