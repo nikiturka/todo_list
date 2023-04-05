@@ -1,13 +1,16 @@
 body{
     font-family: 'Nunito', sans-serif;
-    padding-top: 150px;
-    background-color: #FAFAFA;
+    background-image: url('wallpaper.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container{
-    max-width: 700px;
-    max-height: 900px;
-    margin: auto;
+    width: 700px;
+    height: 900px;
     background-color: white;
     -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
